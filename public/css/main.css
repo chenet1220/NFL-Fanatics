@@ -10,14 +10,22 @@ body {
   grid-template-rows: 8vh 1fr 4vh;
 }
 
+body {
+  background-image: url(https://wallpapercave.com/wp/wp3005620.jpg);
+  background-size: cover; /* Ensure the image covers the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+
 nav, footer {
-  background-color:lightblue;
+  background-color:rgb(62, 50, 231);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2vmin;
   font-size: 2vh;
-  color: lightslategray;
+  color: rgb(13, 28, 92);
 }
 
 nav a {
@@ -58,6 +66,7 @@ form * {
 }
 
 button:hover {
-  background-color: lightslategray;
+  background-color: rgb(38, 103, 194);
   color: white;
 }
+
