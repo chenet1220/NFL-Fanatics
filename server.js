@@ -51,6 +51,10 @@ app.get('/', async (req, res) => {
   res.render('home.ejs');
 });
 
+// GET /team /new (new function)
+app.get("/team/new" , (req, res) => {
+  res.send("this renders user to select team" )
+});
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";

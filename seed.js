@@ -42,7 +42,7 @@
         {name: "San Francisco 49ers", division: "NFC West", record: "W-0 L-0"},
         {name: "Seattle Seahawks", division: "NFC West", record: "W-0 L-0"},
         {name: "Arizona Cardinals", division: "NFC West", record: "W-0 L-0"},
-        {name: "Los Angeles Rams", division: "NFC West", record: "W-0 L-0"},
+        {name: "Los Angeles", division: "NFC West", record: "W-0 L-0"},
     ];
 
     await Team.deleteMany({});
