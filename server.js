@@ -41,7 +41,7 @@ const ensureLoggedIn = require('./middleware/ensureLoggedIn');
 // '/auth' is a "starts with" path that all paths
 // within authCtrl are appended to
 app.use('/auth', require('./controllers/auth'));
-app.use('/todos', require('./controllers/todos'));
+app.use('/team', require('./controllers/team'));
 // If you wanted to protect ALL routes 
 // app.use('/todos', ensureLoggedIn, require('./controllers/todos'));
 
@@ -64,5 +64,3 @@ const port = process.env.PORT ? process.env.PORT : "3000";
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 }); 
-
-

@@ -3,8 +3,6 @@ const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt')
 
-// All paths start with "/auth"
-
 // GET /auth/sign-up (show sign-up form)
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
