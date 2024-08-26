@@ -53,7 +53,7 @@ app.get('/', async (req, res) => {
 
 // GET /team /new (new function)
 app.get("/team/new" , (req, res) => {
-  res.send("this renders user to select team" )
+  res.send("this renders new user to select team" )
 });
 
 // Set the port from environment variable or default to 3000
@@ -63,6 +63,6 @@ const port = process.env.PORT ? process.env.PORT : "3000";
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
-});
+}); 
 
 
