@@ -1,28 +1,31 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const Team = require('../models/team');
 
 // GET /auth/sign-up (show sign-up form)
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
 });
 
-// POST /auth/sign-up (create user)
+// POST /auth/sign-up (create user and redirect to teams page)
 router.post('/sign-up', async (req, res) => {
   try {
     if (req.body.password !== req.body.confirmPassword) {
       throw new Error('Password & confirmation do not match');
     }
-    req.body.password = bcrypt.hashSync(req.body.password, 6);
+    req.body.password = bcrypt.hashSync(req.body.password, 10);
     const user = await User.create(req.body);
-    // "remember" only the user's _id in the session object
     req.session.user = { _id: user._id };
     req.session.save();
+
+    // Redirect to teams page after sign-up
+    res.redirect('/teams');
   } catch (err) {
     console.log(err);
+    res.redirect('/auth/sign-up');
   }
-  res.redirect('/');
 });
 
 // POST /auth/login (login user)
