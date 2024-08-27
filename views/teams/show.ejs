@@ -14,6 +14,7 @@
         <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
           <button type="submit">&#10060;</button>
         </form>
+        <a href="/comments/<%= comment._id %>/edit">EDIT</a>
         <% } %>
       </li>
     <% }); %>

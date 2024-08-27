@@ -19,10 +19,11 @@ router.post('/teams/:teamId/comments', ensureLoggedIn, async (req, res) => {
 });
 
 // GET /comments/:id/edit - Show form to edit comment
-router.get('/:id/edit', ensureLoggedIn, async (req, res) => {
+router.get('/comments/:id/edit', ensureLoggedIn, async (req, res) => {
   try {
-    //const comment = await Comment.findById(req.params.id);
-    res.render('comment/edit.ejs', { comment });
+    const team = await Team.findOne({'comments._id': req.params.id});
+    const comment = team.comments.id(req.params.id);
+    res.render('comments/edit.ejs', { comment });
   } catch (err) {
     console.error(err);
     res.redirect('/');
@@ -30,10 +31,13 @@ router.get('/:id/edit', ensureLoggedIn, async (req, res) => {
 });
 
 // PUT /comments/:id - Update a comment
-router.put('/:id', ensureLoggedIn, async (req, res) => {
+router.put('/comments/:id', ensureLoggedIn, async (req, res) => {
   try {
-    //await Comment.findByIdAndUpdate(req.params.id, { content: req.body.content });
-    res.redirect(`/team/${req.body.teamId}`);
+    const team = await Team.findOne({'comments._id': req.params.id});
+    const comment = team.comments.id(req.params.id);
+    comment.text = req.body.text;
+    await team.save();
+    res.redirect(`/teams/${team._id}`);
   } catch (err) {
     console.error(err);
     res.redirect('/');
