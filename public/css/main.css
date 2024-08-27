@@ -5,6 +5,7 @@
 
 .centered-content {
   text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,3 +85,19 @@ button:hover {
   color: white;
 }
 
+section.teams-container {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 2vmin;
+  article {
+    border: 0.7vmin solid red;
+    border-radius: 2vmin;
+    font-size: 3vmin;
+    height: 10vmin;
+  }
+  a {
+    text-decoration: none;
+  }
+}

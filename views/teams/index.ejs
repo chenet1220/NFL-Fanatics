@@ -1,10 +1,12 @@
 <%- include("../partials/header.ejs") %>
 <h1>Teams</h1>
-<ul>
+<section class="teams-container">
   <% teams.forEach(function(team) { %>
-  <li><a href="/team/<%= team._id %>">
-      <%= team.name %>
-    </a></li>
+    <a href="/team/<%= team._id %>">
+      <article class="centered-content">
+        <%= team.name %>
+      </article>
+    </a>
   <% }); %>
-</ul>
+</section>
 <%- include("../partials/footer.ejs") %>
