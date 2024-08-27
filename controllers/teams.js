@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Team = require('../models/team');
-const Comment = require('../models/comment');
 const ensureLoggedIn = require('../middleware/ensureLoggedIn');
 
 // GET /teams - List all teams with comments
@@ -28,21 +27,6 @@ router.post('/', ensureLoggedIn, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.redirect('/teams/new');
-  }
-});
-
-// POST /teams/:id/comments - Add a new comment to a team
-router.post('/:id/comments', ensureLoggedIn, async (req, res) => {
-  try {
-    const comment = await Comment.create({
-      text: req.body.text,
-      user: req.session.user._id,
-      team: req.params.id
-    });
-    res.redirect(`/teams/${req.params.id}`);
-  } catch (err) {
-    console.error(err);
-    res.redirect('/teams');
   }
 });
 
