@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= team.name %> Details</title>
+  <style>
+    body {
+      background-image: url('https://wallpapercave.com/wp/wp3005620.jpg');
+      background-size: cover;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= team.name %></h1>
+  <h2>Division: <%= team.division %></h2>
+  <h3>Record: <%= team.record %></h3>
+
+  <h2>Comments</h2>
+  <% comments.forEach(function(comment) { %>
+    <p><strong><%= comment.user.username %>:</strong> <%= comment.content %></p>
+    <% if (comment.user._id.equals(user._id)) { %>
+      <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/comments/<%= comment._id %>/edit">Edit</a>
+    <% } %>
+  <% }); %>
+
+  <form action="/comments" method="POST">
+    <input type="hidden" name="teamId" value="<%= team._id %>">
+    <textarea name="content" rows="3" cols="30" placeholder="Add a comment"></textarea><br>
+    <button type="submit">Comment</button>
+  </form>
+</body>
+</html>

@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to NFL Fanatics</title>
+    <title>Welcome to NFL Fanatics</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .center-content {
+            text-align: center;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to NFL Fanatics</h1>
-  <a href="/teams/new">Click Here to Select Your Favorite Team</a>
-  <br>
-  <a href="/auth/login">Log In/Sign Up to Access Features</a>
+    <div class="center-content">
+        <h1>Welcome to NFL Fanatics</h1>
+        <div class="links">
+            <a href="/teams/new">Click Here to Select Your Favorite</a>
+        </div>
+        <div class="links">
+            <a href="/auth/login">Log In</a>
+        </div>
+    </div>
 </body>
 </html>
+

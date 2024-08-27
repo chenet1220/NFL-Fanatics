@@ -8,7 +8,7 @@
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
     });
 
-    const Team = require("./models/team");
+    const Team = require("./models/teams");
 
     const teams = [
         {name: "Buffalo Bills", division: "AFC East", record: "W-0 L-0"},
