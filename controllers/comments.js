@@ -41,10 +41,12 @@ router.put('/:id', ensureLoggedIn, async (req, res) => {
 });
 
 // DELETE /comments/:id - Delete a comment
-router.delete('/:id', ensureLoggedIn, async (req, res) => {
+router.delete('/comments/:id', ensureLoggedIn, async (req, res) => {
   try {
-    // const comment = await Comment.findByIdAndDelete(req.params.id);
-    res.redirect(`/team/${comment.team}`);
+    const team = await Team.findOne({'comments._id': req.params.id});
+    team.comments.pull(req.params.id);
+    await team.save();
+    res.redirect(`/teams/${team._id}`);
   } catch (err) {
     console.error(err);
     res.redirect('/');

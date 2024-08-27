@@ -45,9 +45,9 @@ app.get('/', async (req, res) => {
 
 // Mount routes
 app.use('/auth', require('./controllers/auth'));
-app.use('/teams', require('./controllers/teams'));
+app.use('/teams', ensureLoggedIn, require('./controllers/teams'));
 // somtimes path starts with /teams and somtimes /comments
-app.use('/', require('./controllers/comments'));
+app.use('/', ensureLoggedIn, require('./controllers/comments'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

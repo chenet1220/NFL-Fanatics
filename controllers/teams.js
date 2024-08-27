@@ -33,10 +33,7 @@ router.post('/', ensureLoggedIn, async (req, res) => {
 // GET /teams/:id - Show a single team with comments
 router.get('/:id', async (req, res) => {
   try {
-    const team = await Team.findById(req.params.id).populate({
-      path: 'comments',
-      populate: { path: 'user' }
-    });
+    const team = await Team.findById(req.params.id).populate('comments.author');
     res.render('teams/show.ejs', { team });
   } catch (err) {
     console.error(err);

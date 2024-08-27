@@ -7,17 +7,21 @@
   <h2>Comments</h2>
   <ul>
     <% team.comments.forEach(function(comment) { %>
-      <li><strong><%= comment.user.username %>:</strong> <%= comment.text %></li>
+      <li>
+        <strong><%= comment.author.username %></strong> (<%= comment.createdAt.toLocaleDateString() %>):
+        <br><%= comment.text %><br>
+        <% if (user._id.equals(comment.author._id)) { %>
+        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+          <button type="submit">&#10060;</button>
+        </form>
+        <% } %>
+      </li>
     <% }); %>
   </ul>
-
-  <% if (user) { %>
     <form action="/teams/<%= team._id %>/comments" method="POST">
       <textarea name="text" required></textarea>
       <button type="submit">Add Comment</button>
     </form>
-  <% } else { %>
-    <p><a href="/auth/login">Log in to comment</a></p>
-  <% } %>
+
 
   <%- include("../partials/footer.ejs") %>
