@@ -39,7 +39,7 @@ const ensureLoggedIn = require('./middleware/ensureLoggedIn');
 
 // Mount routes
 app.use('/auth', require('./controllers/auth'));
-app.use('/teams', require('./controllers/team'));
+app.use('/team', require('./controllers/team'));
 app.use('/comments', require('./controllers/comment'));
 
 // GET / (root/landing page)
@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
 });
 
 // GET /teams/new (new function)
-app.get("/teams/new" , (req, res) => {
+app.get("/team/new" , (req, res) => {
   res.send("This renders a form to select a team");
 });
 

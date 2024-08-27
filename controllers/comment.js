@@ -22,7 +22,7 @@ router.post('/', ensureLoggedIn, async (req, res) => {
 router.get('/:id/edit', ensureLoggedIn, async (req, res) => {
   try {
     const comment = await Comment.findById(req.params.id);
-    res.render('comments/edit.ejs', { comment });
+    res.render('comment/edit.ejs', { comment });
   } catch (err) {
     console.error(err);
     res.redirect('/');

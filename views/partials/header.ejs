@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authentication</title>
+  <title>NFL Fanatics</title>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <link rel="stylesheet" href="/path/to/styles.css">
-
   <nav>
     <!-- Put links that you want to display at all times
          outside of the if/else 
@@ -16,7 +14,7 @@
     <a href="/">HOME</a>
     <div>
       <% if (user) { %>
-        <a href="/team/new">Protected Route</a>&nbsp;&nbsp;
+        <a href="/teams">TEAM LIST</a>&nbsp;&nbsp;
         <a href="/auth/logout">LOG OUT</a>&nbsp;&nbsp;
         <span>Wecome, <%= user.username %></span>
       <% } else { %>
@@ -26,4 +24,3 @@
       </div>
   </nav>
   <main>
-  </body>

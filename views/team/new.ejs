@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Select Your Favorite Team</h1>
-  <form action="/teams/favorite" method="POST">
+  <form action="/team/favorite" method="POST">
     <select name="teamId">
       <% teams.forEach(function(team) { %>
         <option value="<%= team._id %>"><%= team.name %></option>

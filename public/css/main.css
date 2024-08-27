@@ -22,18 +22,24 @@ html, body {
 
 
 
-body {
+body:not(.home-page) {
   margin: 0;
   height: 100vh;
   display: grid;
   grid-template-rows: 8vh 1fr 4vh;
 }
 
-body {
-  background-image: url(https://wallpapercave.com/wp/wp3005620.jpg);
-  background-size: cover; /* Ensure the image covers the entire page */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating the image */
+body.home-page {
+  margin: 0;
+  height: 100vh;
+  background: url('https://wallpapercave.com/wp/wp3005620.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: yellow;
+  font-size: 5vw;
+  a { 
+    color: yellow;
+    font-weight: bold;
+  }
 }
 
 
