@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css">
-  <title><%= team.name %></title>
-  <style>
-    body {
-      background: url('https://wallpapercave.com/wp/wp3005620.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    /* Add other styles */
-  </style>
-</head>
-<body>
-  <% include ../partials/header.ejs %>
+
+<%- include("../partials/header.ejs") %>
   <h1><%= team.name %></h1>
   <p>Division: <%= team.division %></p>
   <p>Record: <%= team.record %></p>
@@ -35,6 +20,4 @@
     <p><a href="/auth/login">Log in to comment</a></p>
   <% } %>
 
-  <% include ../partials/footer.ejs %>
-</body>
-</html>
+  <%- include("../partials/footer.ejs") %>
