@@ -1,0 +1,10 @@
+<%- include("../partials/header.ejs") %>
+<h1>Teams</h1>
+<ul>
+  <% teams.forEach(function(team) { %>
+  <li><a href="/team/<%= team._id %>">
+      <%= team.name %>
+    </a></li>
+  <% }); %>
+</ul>
+<%- include("../partials/footer.ejs") %>

@@ -21,7 +21,7 @@ router.post('/sign-up', async (req, res) => {
     const user = await User.create(req.body);
     req.session.user = { _id: user._id, username: user.username }; // Store username in session
     req.session.save();
-    res.redirect('/team'); // Redirect to teams page after sign-up
+    res.redirect('/teams'); // Redirect to teams page after sign-up
   } catch (err) {
     console.log(err);
     res.redirect('/auth/sign-up');

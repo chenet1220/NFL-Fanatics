@@ -3,24 +3,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .centered-content {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
 
 body:not(.home-page) {
   margin: 0;
@@ -50,7 +38,7 @@ nav, footer {
   align-items: center;
   padding: 0 2vmin;
   font-size: 2vh;
-  color: rgb(13, 28, 92);
+  color: white;
 }
 
 nav a {
@@ -76,6 +64,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 5vmin;
+  overflow-y: scroll;
 }
 
 form {

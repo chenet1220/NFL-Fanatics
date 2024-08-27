@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Teams = require('../models/team');
+const Team = require('../models/team');
 const Comment = require('../models/comment');
 const ensureLoggedIn = require('../middleware/ensureLoggedIn');
 

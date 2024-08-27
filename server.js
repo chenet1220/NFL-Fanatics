@@ -37,24 +37,18 @@ app.use(addUserToReqAndLocals);
 // Routes/Controllers
 const ensureLoggedIn = require('./middleware/ensureLoggedIn');
 
-// Mount routes
-app.use('/auth', require('./controllers/auth'));
-app.use('/team', require('./controllers/team'));
-app.use('/comments', require('./controllers/comment'));
 
 // GET / (root/landing page)
 app.get('/', async (req, res) => {
   res.render('home.ejs');
 });
 
-// GET /teams/new (new function)
-app.get("/team/new" , (req, res) => {
-  res.send("This renders a form to select a team");
-});
+// Mount routes
+app.use('/auth', require('./controllers/auth'));
+app.use('/teams', require('./controllers/teams'));
+app.use('/comments', require('./controllers/comments'));
 
-// Set the port from environment variable or default to 3000
-const port = process.env.PORT || "3000";
-
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
