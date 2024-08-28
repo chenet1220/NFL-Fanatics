@@ -28,12 +28,14 @@ const teamSchema = new mongoose.Schema({
   record: {
     type: String
   },
-  comments: [commentSchema]
+  comments: [commentSchema],
+  imagePath: String 
 });
 
 const Team = mongoose.model("Team", teamSchema);
 
 module.exports = Team;
+
 
 
 
