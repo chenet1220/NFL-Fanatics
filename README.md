@@ -36,7 +36,7 @@ You can even share thoughts or blog of each team by typing and submitting in the
 ## Live Demo
 Try out this easy working application here: [Nfl Fanatics by Chris Chenet](https://nfl-fanatics-3e6dc052dc8d.herokuapp.com/)
 
-## Usage
+## Getting Started Instructions
 * **Sign Up:** Start by clicking sign up and creating an account.
 * **Log In:** Once you are a user ,click "log in" with both the user name and password you created.
 * **Explore Team list:** Explore Team list and see what might be posted new today , or even to make comments or blogs of a specific team 
