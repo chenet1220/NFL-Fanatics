@@ -30,7 +30,7 @@
         {name: "Washington Commanders", division: "NFC East", record: "W-0 L-0", imagePath: "/images/wash.png"},
         {name: "New York Giants", division: "NFC East", record: "W-0 L-0", imagePath: "/images/giants.png"},
         {name: "Dallas Cowboys", division: "NFC East", record: "W-0 L-0", imagePath: "/images/dallas.png"},
-        {name: "Philadelphia Eagles", division: "NFC East", record: "W-0 L-0", imagePath: "/images/philli.png"},
+        {name: "Philadelphia Eagles", division: "NFC East", record: "W-0 L-0", imagePath: "/images/phili.png" },
         {name: "Detriot Lions", division: "NFC North", record: "W-0 L-0", imagePath: "/images/lions.png"},
         {name: "Green Bay Packers", division: "NFC North", record: "W-0 L-0", imagePath: "/images/gb.png"},
         {name: "Minnesota Vikings", division: "NFC North", record: "W-0 L-0", imagePath: "/images/minn.png"},
