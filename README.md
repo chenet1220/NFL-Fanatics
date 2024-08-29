@@ -1,7 +1,6 @@
 # NFL Fanatics 
-Welcome to ***NFL Fanatics app*** A simple application made for true football fans that wants to get a 
-quick  stats or day to day information on there favorite team or prehaps any team you maybe curious about at the moment 
-You can even share thoughts or blog of each team by typing and submitting in the comments section once you click a team. 
+Welcome to ***NFL Fanatics app*** A simple application made for true football fans that wants to get 
+quick  stats or day to day information on there favorite team or prehaps any team you maybe curious about at the moment. You can even share thoughts or blog of each team by typing and submitting in the comments section once you click a team. 
  
 ## Pictures of The App 
 
